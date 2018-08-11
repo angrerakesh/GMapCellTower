@@ -123,6 +123,7 @@
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\jquery-3.3.1.min.js" />
     <Content Include="Assets\js\latlangsearch.js" />
+    <Content Include="Assets\js\marker.js" />
     <Content Include="Global.asax" />
     <Content Include="Assets\js\main.js" />
     <Content Include="Web.config" />

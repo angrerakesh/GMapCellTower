@@ -5,6 +5,7 @@
     }
 </style>
 @model Map.Web.Models.MapViewModel
+@*<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initMap"></script>*@
 <div class="container">
     <div class="row">
         <h2>Search Latitude And Longitude</h2>
@@ -39,28 +40,32 @@
     </div>
     <div class="row">
         <div class="alert alert-danger" id="errMsg" role="alert">
-            
+
         </div>
     </div>
 
     <div class="row">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="exampleInputEmail1">Latitude</label>
-                <label id="searched_lat"></label>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Longitude</label>
-                <label id="searched_long"></label>
-            </div>
+        <div class="form-group col-md-1">
+            <label for="exampleInputEmail1">Latitude</label>
+        </div>
+        <div class="col-md-3 pull-left">
+            <label id="searched_lat"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-1">
+            <label for="inputPassword4">Longitude</label>
+        </div>
+        <div class="col-md-3 pull-left">
+            <label id="searched_long"></label>
         </div>
     </div>
     <div class="row">
         <div style="height:500px;width:800px" id="map"></div>
     </div>
 </div>
+@*<script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=@Model.ApiKey&callback=initMap">
+    </script>*@
 @Scripts.Render("~/js")
 <script src="~/Assets/js/latlangsearch.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=@Model.ApiKey&callback=initMap">
-</script>
