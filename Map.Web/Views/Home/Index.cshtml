@@ -1,0 +1,66 @@
+﻿<style>
+    #map {
+        height: 100%;
+        margin-left: 50px;
+    }
+</style>
+@model Map.Web.Models.MapViewModel
+<div class="container">
+    <div class="row">
+        <h2>Search Latitude And Longitude</h2>
+    </div>
+
+    <div class="row">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1">MNC</label>
+                    <input type="text" class="form-control" id="MNC" placeholder="MNC">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">MCC</label>
+                    <input type="text" class="form-control" id="MCC" placeholder="MCC">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1">LAC</label>
+                    <input type="text" class="form-control" id="LAC" placeholder="LAC">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">CID</label>
+                    <input type="text" class="form-control" id="CID" placeholder="CID">
+                </div>
+            </div>
+            <button type="button" data-apiurl="" id="btnsearchlatlang" class="btn btn-primary">Search</button>
+        </form>
+
+
+    </div>
+    <div class="row">
+        <div class="alert alert-danger" id="errMsg" role="alert">
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="exampleInputEmail1">Latitude</label>
+                <label id="searched_lat"></label>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Longitude</label>
+                <label id="searched_long"></label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="height:500px;width:800px" id="map"></div>
+    </div>
+</div>
+@Scripts.Render("~/js")
+<script src="~/Assets/js/latlangsearch.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=@Model.ApiKey&callback=initMap">
+</script>
