@@ -18,8 +18,8 @@ namespace Map.Web.App_Start
             //    "~/Content/bootstrap-responsive.css"));
 
             bundles.Add(new ScriptBundle("~/js").Include(
-                "~/Assets/js/main.js"
-                ));
+                "~/Assets/js/marker.js"
+            ));
         }
     }
 }

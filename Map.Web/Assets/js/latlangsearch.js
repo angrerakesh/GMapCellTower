@@ -24,10 +24,11 @@ $("#btnsearchlatlang").click(function () {
         dataType: 'json',
         success: function (d) {
             console.log(d);
-            if (d != undefined && d.Latitude != null && d.Latitude > 0) {
+            if (d != undefined && d.Latitude != null && d.Latitude != 0) {
                 $("#errMsg").hide();
                 $("#searched_lat").html(d.Latitude);
                 $("#searched_long").html(d.Longitude);
+                LoadMarker(d.Latitude, d.Longitude);
             }
             else {
                 $("#errMsg").show();
